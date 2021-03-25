@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissors, Rock, Paper</title>
+    <link rel="stylesheet"  type="text/css" href="styles/index.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Rock-Paper-Scissors</h1>
+        <div class="menu">
+            <p>How to play</p>
+            <p>Contact Us</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="score">
+            <span id="user-score">0</span>:
+            <span id="comp-score">0</span>
+        </div>
+        <h1>Pick your choice</h1>
+        <div class="choice">
+            <div id="rock" data-color="#dd3f3f"><img src="img/hand_rock.svg"></div>
+            <div id="paper" data-color="#3f71dd"><img src="img/hand_paper.svg"></div>
+            <div id="scissors" data-color="#ff8410"><img src="img/hand_scissors.svg"></div>
+        </div>
+        <h2 id="timers"></h2>
+        <button id="btn-play">Play Again</button>
+    </div>
+</body>
+
+<script src="index.js"></script>
+</html>
