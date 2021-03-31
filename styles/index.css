@@ -30,8 +30,15 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
-.menu > p {
-    padding: 25px;
+.menu > .how {
+    /* padding: 25px; */
+    color: #fff;
+    text-decoration: none;
+}
+
+.how:hover {
+    color: #fdb961;
+    transition: ease .3s;
 }
 
 .container {
@@ -137,4 +144,9 @@ img {
 
 #btn-play:hover{
     cursor: pointer;
+}
+
+.default {
+    background-color: #214252;
+    transition: background-color ease 0.5s;
 }

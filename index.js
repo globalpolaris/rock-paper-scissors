@@ -8,6 +8,9 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const ann = document.getElementById("ann");
+const rockColor = '#dd3f3f';
+const paperColor = '#3f71dd';
+const scissorsColor = '#ff8410';
 
 function computerMove() {
   let choice = ["r", "s", "p"];
@@ -23,6 +26,24 @@ function userWin() {
 function compWin() {
   compScore++;
   comp_score.innerHTML = compScore;
+}
+
+const changeColor = (obj, color) => {
+  let pick = document.getElementById(obj);
+  pick.style.backgroundColor = `${color}`;
+}
+
+const setDefault = (obj1, obj2, color1, color2) => {
+  let pick = document.getElementById(obj1);
+  let pick2 = document.getElementById(obj2);
+  pick.style.cssText = `background-color: #214252;transition: background-color ease 0.5s;`;
+  pick2.style.cssText = `background-color: #214252;transition: background-color ease 0.5s;`
+}
+
+const resetGame = () => {
+  rock.style.backgroundColor = "#214252"
+  paper.style.backgroundColor = "#214252"
+  scissors.style.backgroundColor = "#214252"
 }
 
 function change(choice) {
@@ -63,7 +84,7 @@ function game(userChoice) {
     case "sp":
       console.log("User Win!");
       ann.innerHTML = `${translate} beats ${translate2}!`;
-      compWin();
+      userWin();
       break;
     case "pr":
       console.log("User Win!");
@@ -77,7 +98,7 @@ function game(userChoice) {
     case "ps":
       console.log("Computer Win!");
       ann.innerHTML = `${translate} lose to ${translate2}!`;
-      compWin();
+      userWin();
       break;
     default:
       ann.innerHTML = `Did you not pick anything?`;
@@ -89,7 +110,10 @@ let user_choice = null;
 getUser = (userChoice) => userChoice;
 
 function playAgain() {
-  ann.innerHTML = "Pick your choice";
+  setTimeout(function() {
+    ann.innerHTML = "Pick your choice";
+    resetGame();
+  }, 1000)
   main();
 }
 var Timer;
@@ -101,12 +125,18 @@ function startTimer() {
   Timer = setInterval(function () {
     if (timer >= 0) {
       rock.addEventListener("click", function () {
+        setDefault("paper", "scissors", paperColor, scissorsColor);
+        changeColor("rock", rockColor);
         chc = getUser("r");
       });
       paper.addEventListener("click", function () {
+        setDefault("rock", "scissors", rockColor, scissorsColor);
+        changeColor("paper", paperColor);
         chc = getUser("p");
       });
       scissors.addEventListener("click", function () {
+        setDefault("paper", "rock", paperColor, rockColor);
+        changeColor("scissors", scissorsColor);
         chc = getUser("s");
       });
       document.getElementById("timers").innerHTML = timer + " second(s)";
@@ -133,23 +163,3 @@ function main() {
 
 main();
 
-// console.log("Timer:" + timer);
-// rock.addEventListener("click", function () {
-//   chc = getUser("r");
-// });
-// paper.addEventListener("click", function () {
-//   chc =getUser("p");
-// });
-// scissors.addEventListener("click", function () {
-//   chc =getUser("s");
-// });
-// document.getElementById("timers").innerHTML = timer + " second(s)";
-
-// timer = 5;
-//       game(chc);
-//       document.getElementById("timers").innerHTML = "Time's Up!";
-//       pa.style.cssText = "display:flex;"
-//       pa.addEventListener("click", function() {
-//         pa.style.cssText = "display:none"
-//         playAgain();
-//       });

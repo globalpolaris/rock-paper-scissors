@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Roboto+Mono:wght@400;700&family=Train+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #214252;
+}
+
+.header {
+    background-color: #1c3947;
+    box-sizing: border-box;
+    height: 4em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header > h1 {
+    color: #f05454;
+    font-family: 'Train One', cursive;
+}
+
+.header .menu {
+    box-sizing: border-box;
+    display: flex;
+    color: rgb(245, 245, 245);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.menu > .how {
+    /* padding: 25px; */
+    color: #fff;
+    text-decoration: none;
+}
+
+.how:hover {
+    color: #fdb961;
+    transition: ease .3s;
+}
+
+.container {
+    height: 75vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container > p {
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.t, .chc {
+    color: #f05454;
+    font-weight: bolder;
+}
+
+#btn-play {
+    margin-top: 2em;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 20px 10px 20px;
+    border-style: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #e48e1e;
+}
